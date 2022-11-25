@@ -23,50 +23,40 @@ Program to implement univariate Linear Regression to fit a straight line using l
 Developed by: M.Sowmya
 RegisterNumber:  212221230107
 *\
+```
+```
 import numpy as np
 import matplotlib.pyplot as plt
-#assignn input 
-x=np.array([0,1,2,3,4,5,6,7,8,9])
-y=np.array([1,3,2,5,7,8,8,9,10,12])
-#mean values of input
-x_mean=np.mean(x) 
-print(x_mean)
-y_mean=np.mean(y)
-print(y_mean)
+X=np.array([0,1,2,3,4,5,6,7,8,9])
+Y=np.array([1,3,2,5,7,8,8,9,10,12])
+X_mean=np.mean(X)
+print(X_mean)
+Y_mean=np.mean(Y)
+print(Y_mean)
 num=0
 denum=0
-for i in range(len(x)):
-    num+=(x[i]-x_mean)*(y[i]-y_mean)
-    denum+=(x[i]-x_mean)**2
-#find m
+for i in range(len(X)):
+  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  denum+=(X[i]-X_mean)**2
 m=num/denum
-#find b
-b=y_mean-m*x_mean
-print(m,b)
-#find y_pred
-y_pred=m*x+b
-print(y_pred)
-#plot graph
-plt.scatter(x,y)
-plt.plot(x,y_pred,color='green')
+print(m)
+b=Y_mean - m*X_mean
+print(b)
+Y_pred=m*X+b
+print(Y_pred)
+plt.scatter(X,Y,color='purple')
+plt.plot(X,Y_pred,color='red') 
 plt.show()
-import numpy as np
-import pandas as pd
-dataset=pd.read_csv('Placement_Data.csv')
-print(dataset.iloc[3])
-print(dataset.iloc[0:4])
-print(dataset.iloc[:,1:3])
-
 ```
 
 ## Output:
+![output](./ml1.1.png)
+![output](./ml1.2.png)
+![output](./ml1.3.png)
+![output](./ml1.4.png)
+![output](./ml1.5.png)
 ![outpu](./ml%20ex.1.1.PNG)
 
-![output](./ml%20ex.1.2.PNG)
-
-![output](./ml%20ex.1.3.PNG)
-
-![output](./ml%20ex.1.4.PNG)
 
 ## Result:
 Thus the univariate Linear Regression was implemented to fit a straight line using least squares using python programming.
